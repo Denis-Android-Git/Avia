@@ -1,4 +1,4 @@
-package ru.sr.adapter
+package com.example.delegates
 
 import android.util.SparseArray
 import android.view.ViewGroup
@@ -28,7 +28,7 @@ class AdaptersDelegateManager<I>() {
         val delegatesCounter = mapDelegates.size
         for (index in 0 until delegatesCounter) {
             val listDelegate = mapDelegates.toList()
-            if (listDelegate[index].second.isForViewType(items,)
+            if (listDelegate[index].second.isForViewType(items)
             ) return listDelegate[index].first
         }
         return throw Exception("AdapterDelegate not added")
@@ -46,9 +46,9 @@ class AdaptersDelegateManager<I>() {
         delegate.onBindViewHolder(holder, item)
     }
 
-    fun onBindViewHolder(item: I, holder: ViewHolder,payloads:MutableList<Any>) {
+    fun onBindViewHolder(item: I, holder: ViewHolder, payloads: MutableList<Any>) {
         val delegate =
             mapDelegates[holder.itemViewType] ?: throw Exception("AdapterDelegate not added")
-        delegate.onBindViewHolder(holder, item,payloads)
+        delegate.onBindViewHolder(holder, item, payloads)
     }
 }

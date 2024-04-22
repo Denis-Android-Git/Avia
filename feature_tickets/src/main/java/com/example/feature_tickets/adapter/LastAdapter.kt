@@ -11,8 +11,8 @@ import com.example.feature_tickets.R
 import com.example.feature_tickets.databinding.ItemLastBinding
 import com.example.feature_tickets.domain.model.Ticket
 import com.example.feature_tickets.utils.calculateFlightTime
-import ru.sr.adapter.ListDelegateAdapter
-import ru.sr.adapter.adapterDelegate
+import com.example.delegates.ListDelegateAdapter
+import com.example.delegates.adapterDelegate
 import java.text.NumberFormat
 import java.util.Locale
 

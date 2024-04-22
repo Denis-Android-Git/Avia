@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import com.example.feature_tickets.R
 import com.example.feature_tickets.databinding.ItemOfferBinding
 import com.example.feature_tickets.domain.model.TicketsOffer
-import ru.sr.adapter.ListDelegateAdapter
-import ru.sr.adapter.adapterDelegate
+import com.example.delegates.ListDelegateAdapter
+import com.example.delegates.adapterDelegate
 import java.text.NumberFormat
 import java.util.Locale
 

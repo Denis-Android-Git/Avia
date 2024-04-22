@@ -1,4 +1,4 @@
-package ru.sr.adapter
+package com.example.delegates
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -11,7 +11,7 @@ abstract class ListDelegateAdapter<Interface>(
 
     private val delegateManager = AdaptersDelegateManager<Interface>()
 
-    fun addDelegate(delegate: AdapterDelegate<Interface, >) {
+    fun addDelegate(delegate: AdapterDelegate<Interface>) {
         delegateManager.addDelegate(delegate)
     }
 

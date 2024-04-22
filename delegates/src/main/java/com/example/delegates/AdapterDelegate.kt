@@ -1,4 +1,4 @@
-package ru.sr.adapter
+package com.example.delegates
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

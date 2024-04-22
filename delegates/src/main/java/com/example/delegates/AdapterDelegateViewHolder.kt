@@ -1,4 +1,4 @@
-package ru.sr.adapter
+package com.example.delegates
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
@@ -9,15 +9,15 @@ class AdapterDelegateViewHolder<T, VB : ViewBinding>(val binding: VB) :
     internal var _item: T? = null
     val item get() = _item!!
 
-    internal var _bind :(()->Unit)? =null
+    internal var _bind: (() -> Unit)? = null
         private set
 
-    internal var _bindForPayloads :((payloads: MutableList<Any>)->Unit)? =null
+    internal var _bindForPayloads: ((payloads: MutableList<Any>) -> Unit)? = null
         private set
 
 
     fun bind(bindingBlock: () -> Unit) {
-       this._bind = bindingBlock
+        this._bind = bindingBlock
     }
 
     fun bindForPayloads(bindingBlock: (payloads: MutableList<Any>) -> Unit) {
