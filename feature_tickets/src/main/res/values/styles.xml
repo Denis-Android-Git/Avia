@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.MyApp.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">#2F3035</item>
+        <item name="android:textColor">#FFFF</item>
+    </style>
+
+
+
+</resources>

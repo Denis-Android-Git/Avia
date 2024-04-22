@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tickets_navi"
+        android:icon="@drawable/avia"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/hotels_navi"
+        android:icon="@drawable/hotel"
+        android:title="@string/title_dashboard" />
+
+    <item
+        android:id="@+id/koroche_navi"
+        android:icon="@drawable/koroche"
+        android:title="@string/title_notifications" />
+    <item
+        android:id="@+id/follow_navi"
+        android:icon="@drawable/follow"
+        android:title="@string/title_follow" />
+    <item
+        android:id="@+id/profile_navi"
+        android:icon="@drawable/profile"
+        android:title="@string/title_profile" />
+
+</menu>

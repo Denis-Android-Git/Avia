@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Avia</string>
+    <string name="title_home">Авиабилеты</string>
+    <string name="title_dashboard">Отели</string>
+    <string name="title_notifications">Короче</string>
+    <string name="title_follow">Подписки</string>
+    <string name="title_profile">Профиль</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/koroche_navi"
+    app:startDestination="@id/korocheFragment">
+
+    <fragment
+        android:id="@+id/korocheFragment"
+        android:name="com.example.feature_koroche.ui.KorocheFragment"
+        android:label="fragment_koroche"
+        tools:layout="@layout/fragment_koroche" />
+</navigation>

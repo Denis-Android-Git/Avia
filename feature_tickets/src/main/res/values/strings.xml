@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Поиск дешевых авиабилетов</string>
+    <string name="feel_music">Музыкально отлететь</string>
+    <string name="price">от %1$s ₽</string>
+    <string name="from">Откуда - Москва</string>
+    <string name="to">Куда - Турция</string>
+    <string name="only_russian">Только кириллица</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enywhere">Куда угодно</string>
+    <string name="stambul">Стамбул</string>
+    <string name="sochi">Сочи</string>
+    <string name="puket">Пхукет</string>
+    <string name="empty" />
+    <string name="dest">%1$s - %2$s</string>
+    <string name="_1">%1$s, 1 пассажир</string>
+</resources>
