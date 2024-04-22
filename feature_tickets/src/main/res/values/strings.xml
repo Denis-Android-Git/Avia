@@ -16,4 +16,5 @@
     <string name="dest">%1$s - %2$s</string>
     <string name="_1">%1$s, 1 пассажир</string>
     <string name="arrival">%1$s - %2$s</string>
+    <string name="fillall">Заполните все поля!</string>
 </resources>

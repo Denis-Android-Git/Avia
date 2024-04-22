@@ -8,6 +8,7 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.feature_tickets.R
@@ -48,6 +49,10 @@ class CountryFragment : Fragment() {
 
         binding.cross.setOnClickListener {
             binding.to.setText(getString(R.string.empty))
+        }
+
+        binding.arrwhite.setOnClickListener {
+            findNavController().popBackStack()
         }
 
         var isChange = false
@@ -101,17 +106,13 @@ class CountryFragment : Fragment() {
         binding.date.text = spannableString
 
         binding.date.setOnClickListener {
-
             dateDialog.show(childFragmentManager, "datePicker")
-
             dateDialog.addOnPositiveButtonClickListener { timeMillis ->
                 calendar.timeInMillis = timeMillis
                 val buttonText2 = dateFormat.format(timeMillis)
                 val spannableString2 = SpannableString(buttonText2)
-
                 val dayOfWeekString2 = SimpleDateFormat("E", Locale("ru")).format(timeMillis)
                 val startIndex2 = buttonText2.indexOf(dayOfWeekString2)
-
                 if (startIndex2 != -1) {
                     val color = Color.GRAY
                     spannableString2.setSpan(
@@ -121,32 +122,33 @@ class CountryFragment : Fragment() {
                         SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
                     )
                 }
-
                 binding.date.text = spannableString2
             }
         }
+
         binding.bigbtn.setOnClickListener {
-            val bundle = Bundle()
-            val date = calendar.timeInMillis
-            val fromArg1 = binding.from.text.toString()
-            val toArg1 = binding.to.text.toString()
+            if (binding.from.text.isEmpty() || binding.to.text.isEmpty()) {
+                Toast.makeText(requireContext(), getString(R.string.fillall), Toast.LENGTH_SHORT).show()
+            } else {
+                val bundle = Bundle()
+                val date = calendar.timeInMillis
+                val fromArg1 = binding.from.text.toString()
+                val toArg1 = binding.to.text.toString()
 
-            bundle.putString("fromArg", fromArg1)
-            bundle.putString("toArg", toArg1)
-            bundle.putLong("date", date)
-            findNavController().navigate(R.id.lastFragment, bundle)
+                bundle.putString("fromArg", fromArg1)
+                bundle.putString("toArg", toArg1)
+                bundle.putLong("date", date)
+                findNavController().navigate(R.id.lastFragment, bundle)
+            }
         }
+
         binding.back.setOnClickListener {
-
             dateDialog.show(childFragmentManager, "datePicker")
-
             dateDialog.addOnPositiveButtonClickListener { timeMillis ->
                 val buttonText2 = dateFormat.format(timeMillis)
                 val spannableString2 = SpannableString(buttonText2)
-
                 val dayOfWeekString2 = SimpleDateFormat("E", Locale("ru")).format(timeMillis)
                 val startIndex2 = buttonText2.indexOf(dayOfWeekString2)
-
                 if (startIndex2 != -1) {
                     val color = Color.GRAY
                     spannableString2.setSpan(
@@ -156,9 +158,7 @@ class CountryFragment : Fragment() {
                         SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE
                     )
                 }
-
                 binding.back.text = spannableString2
-
             }
         }
     }
