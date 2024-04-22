@@ -57,12 +57,22 @@
                 android:id="@+id/transfer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="6dp"
                 android:layout_marginTop="10dp"
-                android:text="4ч в пути/Без пересадок"
+                android:text="4ч в пути"
                 android:textColor="#FFFF"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/time"
+                app:layout_constraintTop_toBottomOf="@+id/price" />
+            <TextView
+                android:id="@+id/no_transfer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="/Без пересадок"
+                android:textColor="#FFFF"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/transfer"
                 app:layout_constraintTop_toBottomOf="@+id/price" />
 
             <TextView
