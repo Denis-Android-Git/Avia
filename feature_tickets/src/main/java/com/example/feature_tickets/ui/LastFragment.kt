@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.feature_tickets.R
+import com.example.feature_tickets.adapter.LastAdapter
 import com.example.feature_tickets.databinding.FragmentLastBinding
+import com.example.feature_tickets.viewmodel.LastTicketsVM
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -15,6 +18,8 @@ class LastFragment : Fragment() {
 
     private var _binding: FragmentLastBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel by viewModel<LastTicketsVM>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +44,15 @@ class LastFragment : Fragment() {
         binding.date.text = getString(R.string._1, dateString)
         binding.arr.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        val adapter by lazy {
+            LastAdapter(requireContext())
+        }
+        binding.recycler.adapter = adapter
+        viewModel.list.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+
         }
     }
 
